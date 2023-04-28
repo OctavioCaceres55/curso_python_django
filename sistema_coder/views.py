@@ -23,6 +23,16 @@ def saludar_al_amor(request):
     pagina_html = HttpResponse(saludo1)
     return pagina_html
 
+def saludar_con_html(request):
+    contexto= {}
+    http_response = render(
+        request=request,
+        template_name='control_estudios/base.html',
+        context=contexto,
+    )
+    return http_response
+
+
 
 
 
