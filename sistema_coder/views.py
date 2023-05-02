@@ -1,40 +1,35 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from datetime import datetime
 
+from django.shortcuts import render
+from django.http import HttpResponse
+
+
 def saludar(request):
-    saludo = "Hola MI VIDA <3. TE AMO MUCHO. SOS HERMOSA. SOS LO MAS LINDO QUE HAY"
+    saludo = "Hola querido usuario"
     pagina_html = HttpResponse(saludo)
     return pagina_html
 
+
 def saludar_con_fecha(request):
-    hoy = datetime.now().day
-    saludo = f"Hola querido usuario, fecha: {hoy} "
+    hoy = datetime.now()
+    saludo = f"Hola querido usuario, fecha: {hoy.day}/{hoy.month}"
     pagina_html = HttpResponse(saludo)
     return pagina_html
+
 
 def saludar_a_usuario(request, nombre):
     texto = f"Hola {nombre}"
     pagina_html = HttpResponse(texto)
     return pagina_html
 
-def saludar_al_amor(request):
-    saludo1 = "Hola mi vida entera. Te amo muchísimo. Te veo el sábado"
-    pagina_html = HttpResponse(saludo1)
-    return pagina_html
 
 def saludar_con_html(request):
     contexto = {
-        "usuario":"Octavio",
+        "usuario": "Pedro"
     }
-    http_response = render(
-        request= request,
-        template_name= 'control_estudios/base.html',
-        context= contexto,
+    http_responde = render(
+        request=request,
+        template_name='control_estudios/base.html',
+        context=contexto,
     )
-    return http_response
-
-
-
-
-
+    return http_responde

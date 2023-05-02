@@ -20,12 +20,12 @@ def listar_cursos(request):
         "cursos": [
             {"nombre": "Python", "comision": "40440"},
             {"nombre": "Frontend", "comision": "1000"},
-            {"nombre": "Diseño", "comision": "1001"}, 
+            {"nombre": "Diseño", "comision": "1001"},
         ]
     }
-    http_response = render(
-        request= request,
-        template_name= 'control_estudios/listar_cursos.html',
-        context = contexto,   
+    http_responde = render(
+        request=request,
+        template_name='control_estudios/lista_cursos.html',
+        context=contexto,
     )
-    return http_response
+    return http_responde

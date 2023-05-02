@@ -27,3 +27,4 @@ urlpatterns = [
     path('hello/<nombre>/', saludar_a_usuario),
     path('saludo-html/', saludar_con_html),
 ]
+
